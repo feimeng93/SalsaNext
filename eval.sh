@@ -1,4 +1,6 @@
 #!/bin/sh
+eval "$(conda shell.bash hook)"
+conda activate salsanext
 helpFunction()
 {
    echo "Options not found"

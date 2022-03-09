@@ -1,6 +1,12 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/salsanext-fast-semantic-segmentation-of-lidar/3d-semantic-segmentation-on-semantickitti)](https://paperswithcode.com/sota/3d-semantic-segmentation-on-semantickitti?p=salsanext-fast-semantic-segmentation-of-lidar) [![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg)](https://arxiv.org/abs/2003.03653)
 
-# SalsaNext: Fast, Uncertainty-aware Semantic Segmentation of LiDAR Point Clouds for Autonomous Driving
+# Situation
+python infer.py -d /home/mf/mengfei_code/UMPNet/SalsaNext/dataset -p /home/mf/mengfei_code/UMPNet/SalsaNext/pred -m /home/mf/mengfei_code/UMPNet/SalsaNext/salsanext/logs/pretrained -s valid -n salsanext -c 30 -u true -l /home/mf/mengfei_code/UMPNet/SalsaNext/pred
+File "../../tasks/semantic/modules/user.py", line 170, in infer_subset
+    unproj_argmax = proj_argmax[p_y, p_x]
+UnboundLocalError: local variable 'proj_argmax' referenced before assignment
+
+SalsaNext: Fast, Uncertainty-aware Semantic Segmentation of LiDAR Point Clouds for Autonomous Driving
 
 ## Abstract 
 
@@ -49,7 +55,7 @@ To train/eval you can use the following scripts:
      * ```-c [Int]```: Number of MC sampling to do (default ```30```)
    * If you want to infer&evaluate a model that you saved to ````/salsanext/logs/[the desired run]```` and you
    want to infer$eval only the validation and save the label prediction to ```/pred```:
-     * ```./eval.sh -d /dataset -p /pred -m /salsanext/logs/[the desired run] -s validation -n salsanext```
+     * ```./eval.sh -d ./dataset -p ./pred -m ./salsanext/logs/pretrained/ -s valid -n salsanext -c 30 -u true```
      
 ### Pretrained Model
 
